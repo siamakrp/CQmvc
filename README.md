@@ -35,6 +35,18 @@ software distributed under the License is distributed on an
 KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
+
+There are othere codes inside the Framework that may provided from other sources and have licensed
+to their respective owners. Checkout source codes for more informations.
+
+This List maybe incomplete, Contact me if you feel something is missing and I'll sort things up!
+
+
+A simple PHP CAPTCHA script
+Copyright 2011 Cory LaViska for A Beautiful Site, LLC. (http://abeautifulsite.net/)
+
+Licensed under the MIT license: http://opensource.org/licenses/MIT
+
 ------------------------------------------------------------------------------------------------------
 
 
@@ -190,7 +202,7 @@ App/View/Test/_Index.php
 <?php
 
 ?>
-
+```html
 <html>
 <body>
 
@@ -207,7 +219,7 @@ children[1] <input name="myModel->children{1}" /><br />
 </fieldset>
 </body>
 </html>
-
+```
 
 In the above Script, we created a simple form. In that form, we are going to post some informations for our model and
 a single id value.
@@ -299,7 +311,7 @@ class ChildModel {
 So we have this form:
 
 
-
+```html
 <form action="/Test/complexFormTest" method="post" enctype="multipart/form-data" >
 
 <fieldset>
@@ -330,7 +342,7 @@ So we have this form:
 <input type="submit" value="post" />
 </fieldset>
 </form>
-
+```
 
 In the above form, we want to submit multiple users data each with their own children and profile image and some other files specified to each user.
 
