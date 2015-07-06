@@ -379,8 +379,9 @@ Every file you post, is converted to the FileBase object that has some helper me
 
 You also can post multi dimentional arrays and ...
 
-CQmvc also provides Templating and master view and Models can be passed to Views by Constructors directly assign to View Fields
-Checkout the full example provided with the source inside App folder.
+CQmvc also provides Templating using Master View Technique. 
+Models and ViewModels can be passed to Views by Constructors directly or assign to View Class Fields.
+Checkout the example provided with the source inside App folder.
 
 CQmvc also has some helper Classes like SimpleCaptcha from (https://github.com/claviska/simple-php-captcha) Converted to a suitable Class and UUID class and that I think copy and pasted from Stack Over Flow guy some long time ago.
 Also there is a Store class for serializatoins and Also a Simple Validator Class.
