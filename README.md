@@ -155,13 +155,13 @@ The easiest way is to follow that naming rule. But you can change the script nam
 
 These examples is proved inside the source code in the App folder.
 
-First of all we create the Test Controller inside Control folder of App directory.
+a) First of all we create the Test Controller inside Control folder of App directory.
 
 
 App/Control/Test.php
 
 
-class Test extends Ctrl {
+    class Test extends Ctrl {
 	
 	
 	public function index() {
@@ -173,7 +173,7 @@ class Test extends Ctrl {
 		//or use this, it'll GZip the the output
 		//$this->renderGz();
 	}
-}
+    }
 
 In the above class, we created an Action called index. Its going to be the index of our application.
 
@@ -182,9 +182,9 @@ Inside it, new Index() creates a View Class. Inside
 App/View/Test/Index.php
 
 
-class Index extends View {
+    class Index extends View {
 		
-}
+    }
 
 Just like that! You could define that View directly inside:
 
@@ -229,7 +229,7 @@ Lets look at the Models structure.
 App/Model/UserModel.php
 
 
-class UserModel {
+    class UserModel {
 	
 	/**
 	 * 
@@ -256,14 +256,14 @@ class UserModel {
 	 * @var array
 	 */
 	public $postedFiles;
-}
+    }
    
 It is just a simple PHP Class.
 
 Now the /Test/postTest Action inside Test controller:
 
 
-public function postTest(UserModel $myModel = null, $id = 0) {
+    public function postTest(UserModel $myModel = null, $id = 0) {
 		
 		print "id: $id<br />";
 		
@@ -275,9 +275,9 @@ public function postTest(UserModel $myModel = null, $id = 0) {
 			
 			echo "$x<br />";
 	}
-}
+    }
 
-In the postTest Action, we define post parameters as Action's Arguments And should hint him what are the expected types.
+In the postTest Action, we define post parameters as Action's Arguments And should hint him what the expected types are.
 
 Also its a good practice to bring default values for every Arguments.
 
@@ -285,25 +285,25 @@ Now All you need to do is to fill in some blah blah and click the submit button.
 
 Its printing those you filled ha? But how?
 
-Easy! Frameworks Runtime gets the Request data and routes and converts maps them to the actions Parameters.
+Easy! Frameworks Runtime gets the Request data and routes and converts and maps them to the Action's Parameters.
 
-You can think of the {} as [] for arrays and the -> for dot. So the myModel->children{0} means the first child of the model and the children should be an array defined in Model Class.
+Inside the Form, you can think of the {} as [] for arrays and the -> for dot. So the myModel->children{0} means the first child of the model and the children should be an array defined in Model Class.
 
 
 Now lets take a more complex example:
 
 
-Suppose the children array in UserMode consists of a objects of type ChildModel
+b) Suppose the children array in UserMode consists of a objects of type ChildModel
 
 
 App/Model/ChildModel.php
 
 
-class ChildModel {
+    class ChildModel {
 	
 	public $name;
 	public $lastName;
-}
+    }
 
 So we have this form:
 
@@ -343,9 +343,9 @@ So we have this form:
 
 In the above form, we want to submit multiple users data each with their own children and profile image and some other files specified to each user.
 
-Here is the complexFormTest Action difinition inside Test Controller:
+Here is the complexFormTest Action defined inside Test Controller:
 
-public function complexFormTest(array $myModels = null) {
+    public function complexFormTest(array $myModels = null) {
 
 		foreach ($myModels as $u) {
 			
@@ -371,8 +371,8 @@ public function complexFormTest(array $myModels = null) {
 			}
 			print "</ul>";
 			echo "<hr />";
-	} 
-}  
+	    } 
+    }  
 
 
 Every file you post, is converted to the FileBase object that has some helper methods to save or validate the file.
