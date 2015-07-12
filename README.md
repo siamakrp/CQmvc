@@ -142,6 +142,20 @@ Please note that this does not mean that every file should contain exactly one C
 For example imagine I've defined a Model Called MyModel inside MyModel.php.
 This MyModel uses a helper class Called MyModelHelper. I can easily put MyModelHelper inside MyModel.php if and only if MyModel class gets called first in the Controllers or Views or other places otherwise it should be explicitly included.
 
+Besides that, it can find classes that have namesapces and those namespaces exactly determine where the class is.
+
+To show how, suppose you have defined a Data Access Object class inside the DLA folder of your project.
+
+DAL/MYSQL/MyAccessClass.php
+
+and here is the MyAccessClass.php
+
+
+    namespace DAL\MYSQL;
+
+    class MyAccessClass {}
+
+Doing so, you don't need to include the DAL/MYSQL/MyAccessClass.php inside your codes ...
 
 Only one thing before starting the examples, and its about the Views.
 
